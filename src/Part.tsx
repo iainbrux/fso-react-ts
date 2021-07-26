@@ -29,6 +29,14 @@ const Part: React.FC<{part: CoursePart}> = ({ part }) => {
           {part.exerciseSubmissionLink}
         </p>
       </section>
+    case "special":
+      return <section>
+        <h4>{part.name} {part.exerciseCount}</h4>
+        <p>
+          <em>{part.description}</em><br />
+          required skills: {part.requirements.map(skill => part.requirements.indexOf(skill) === (part.requirements.length - 1) ? `${skill}` : `${skill}, `)}
+        </p>
+      </section>
     default:
       return assertNever(part)
   }
