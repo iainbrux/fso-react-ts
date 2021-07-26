@@ -6,18 +6,14 @@ export interface CourseParts {
   courseParts: CoursePart[];
 }
 
-
 interface CoursePartBase {
   name: string;
   exerciseCount: number;
   type: string;
+  description?: string;
 }
 
-interface CoursePartBaseDescription extends CoursePartBase {
-  description: string;
-}
-
-interface CourseNormalPart extends CoursePartBaseDescription {
+interface CourseNormalPart extends CoursePartBase {
   type: "normal";
 }
 
@@ -26,7 +22,7 @@ interface CourseProjectPart extends CoursePartBase {
   groupProjectCount: number;
 }
 
-interface CourseSubmissionPart extends CoursePartBaseDescription {
+interface CourseSubmissionPart extends CoursePartBase {
   type: "submission";
   exerciseSubmissionLink: string;
 }
