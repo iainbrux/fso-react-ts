@@ -11,17 +11,19 @@ const Part: React.FC<{part: CoursePart}> = ({ part }) => {
   switch(part.type) {
     case "normal":
       return <section>
-        <h3>{part.name} {part.exerciseCount}</h3>
-        <p><em>{part.description}</em></p>
+        <h4>{part.name} {part.exerciseCount}</h4>
+        <p>
+          <em>{part.description}</em>
+        </p>
       </section>
     case "groupProject":
       return <section>
-        <h3>{part.name} {part.exerciseCount}</h3>
+        <h4>{part.name} {part.exerciseCount}</h4>
         <p>{part.groupProjectCount}</p>
       </section>
     case "submission":
       return <section>
-        <h3>{part.name} {part.exerciseCount}</h3>
+        <h4>{part.name} {part.exerciseCount}</h4>
         <p>
           <em>{part.description}</em><br />
           {part.exerciseSubmissionLink}
